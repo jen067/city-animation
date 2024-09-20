@@ -8,6 +8,7 @@ body {
   height: 100vh;
   border-radius: 0px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -21,6 +22,7 @@ body {
   max-width: 50rem;
   border: 1px solid black;
   position: relative;
+  overflow: hidden;
 }
 
 .txt-wrapper {
@@ -52,4 +54,63 @@ body {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+[class^=house] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.house1 {
+  width: 11.25rem;
+  height: 12.5rem;
+  border-radius: 0px;
+  border: 1px solid black;
+}
+.house1 .window {
+  width: 2.5rem;
+  height: 6.25rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  margin-top: 2.5rem;
+  margin-left: 4.375rem;
+}
+.house1 .window .circle {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: 0.25rem;
+  margin-left: 0.625rem;
+}
+
+/* house1 end */
+.house2 {
+  width: 15rem;
+  height: 10.625rem;
+  border-radius: 0px;
+  border: 1px solid black;
+  right: 8.125rem;
+}
+.house2 .door {
+  width: 2.5rem;
+  height: 5rem;
+  border-radius: 0px;
+  border: 1px solid black;
+  border-radius: 1.25rem 1.25rem 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+}
+
+/* house2 end */
+.house3 {
+  width: 20rem;
+  height: 18.75rem;
+  border-radius: 0px;
+  border: 1px solid black;
 }
