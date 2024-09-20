@@ -48,19 +48,20 @@ body
 
 .scene
     +size(43.75rem,31.25rem,15px)
-    max-width: 50rem
     border: 1px solid black
     position: relative
     overflow: hidden
 
 .txt-wrapper
     margin: 
-        top: 1.5rem
+        top: 4rem
         left: 1.5rem
+    max-width: 20rem
+    padding: .5rem
     &> * + *
         margin-top: .5rem 
     h1
-        font-size: 3rem 
+        font-size: 2.4rem 
         font-weight: 500
         letter-spacing: .125rem
     h5
@@ -68,6 +69,7 @@ body
         font-weight: 500
         letter-spacing: .125rem
         opacity: .5
+        line-height: 1.2
     p
         font-size: 1rem 
         letter-spacing: .125rem
@@ -122,9 +124,54 @@ body
 
 .house3
     +size(20rem,18.75rem)
+    +flex
     border: 1px solid black
 
-    .
+    .wall
+        +flex($j: flex-start,$d: column)
+        flex-grow: 1
+        height: 100%
+        border: 1px solid black
+        position: relative
+        
+        .window
+            +size(1.5rem,3rem)
+            border: 1px solid black
+            border-radius:0.75rem 0.75rem 0 0 
+            margin-top: 1.875rem
+        
+        &:before
+            content: ' '
+            display: block
+            +size(105%, 1rem)
+            border: 1px solid black
+            position: absolute
+            top: -1rem
+            left: 50%
+            transform: translateX(-50%)
+        
+        =wall($flex)
+            flex: $flex
+
+        &:nth-child(1)
+            flex: 10
+        
+        &:nth-child(2)
+            flex: 14
+
+        &:nth-child(3)
+            flex: 10
+        
+    =halfCircle($r)
+        +size(calc($r * 2),$r,$r $r 0 0 )
+    
+    .roof
+        +halfCircle(9.375rem)
+        border: 1px solid black
+        position: absolute
+        top: -10.3rem
+        right: 5px
+
 
 
     
