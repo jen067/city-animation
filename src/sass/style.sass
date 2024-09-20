@@ -19,7 +19,6 @@ $colorWindowGrey: #534d4d
 $roofGradient: linear-gradient(150deg,$colorBlueRoofLight,$colorBlueRoofDark)
 $sceneGradient: linear-gradient(#1D2B49,#1A45A0,#91cdff,#fff)
 
-
 /* Stylesheet */
 
 @mixin size($w,$h:$w,$bdrs:0px)
@@ -39,18 +38,25 @@ $sceneGradient: linear-gradient(#1D2B49,#1A45A0,#91cdff,#fff)
     left: $l
     top: $t 
 
+*
+    position: relative
+
 body
     font-family: "Playfair Display", serif
     +size(100%,100vh)
     +flex
     min-height: 100vh
     padding: 1rem
+    background-color: $colorBackground
+    color: #fff
+    cursor: pointer
 
 .scene
-    +size(43.75rem,31.25rem,15px)
-    border: 1px solid black
+    +size(43.75rem,32rem,15px)
     position: relative
     overflow: hidden
+    background: $sceneGradient
+    background-size: 100% 300%
 
 .txt-wrapper
     margin: 
@@ -64,6 +70,7 @@ body
         font-size: 2.4rem 
         font-weight: 500
         letter-spacing: .125rem
+        line-height: 1.2
     h5
         font-size: 1rem
         font-weight: 500
@@ -89,33 +96,41 @@ body
 
 .house1
     +size(11.25rem,12.5rem)
-    border: 1px solid black
+    background-color: $colorGreyLight
+    box-shadow: inset -50px 0 $colorGreyNormal
+    z-index: 1
 
     .window
         +size(2.5rem,6.25rem,20px)
         display: flex
         flex-direction: column
         justify-content: center
-        border: 1px solid black
+
+        background-color: $colorGreyNormal
+        box-shadow: inset 8px 5px $colorGreyDark
         margin:
             top: 2.5rem
             left: 4.375rem
 
         .circle
             +size(1.25rem,1.25rem,50%)
-            border: 1px solid black
+    
             margin: .25rem
             margin-left: .625rem
+            background-color: $colorWindowGrey
 /* house1 end */
 
 .house2
     +size(15rem,10.625rem)
-    border: 1px solid black
     right: 8.125rem
+    background-color: $colorGreyLight
+    box-shadow: inset 0px 15px $colorShadowBlueLight,inset -72px 0 $colorGreyNormal
+    z-index: 1
 
     .door
         +size(2.5rem,5rem)
-        border: 1px solid black
+        background-color: $colorBackground
+        box-shadow: inset 8px 5px $colorShadowBlue
         border-radius:1.25rem 1.25rem 0 0 
         position: absolute
         bottom: 0
@@ -125,18 +140,16 @@ body
 .house3
     +size(20rem,18.75rem)
     +flex
-    border: 1px solid black
-
+    z-index: 0
     .wall
         +flex($j: flex-start,$d: column)
         flex-grow: 1
         height: 100%
-        border: 1px solid black
         position: relative
         
         .window
             +size(1.5rem,3rem)
-            border: 1px solid black
+            background-color: $colorBackground
             border-radius:0.75rem 0.75rem 0 0 
             margin-top: 1.875rem
         
@@ -144,7 +157,8 @@ body
             content: ' '
             display: block
             +size(105%, 1rem)
-            border: 1px solid black
+            background-color: inherit
+            box-shadow: 0 0 8px $colorWindowGrey
             position: absolute
             top: -1rem
             left: 50%
@@ -155,22 +169,63 @@ body
 
         &:nth-child(1)
             flex: 10
+            background-color: $colorGreyLight
+
+            .window
+                box-shadow: inset 8px 2px $colorBlueRoofLight
         
         &:nth-child(2)
             flex: 14
+            background-color: $colorGreyNormal
+
+            &:before
+                z-index: 1
 
         &:nth-child(3)
             flex: 10
+            background-color: $colorGreyDark
+
+            .window
+                box-shadow: inset -8px 2px $colorBlueRoofLight
         
     =halfCircle($r)
         +size(calc($r * 2),$r,$r $r 0 0 )
     
     .roof
         +halfCircle(9.375rem)
-        border: 1px solid black
+        background: $roofGradient
         position: absolute
-        top: -10.3rem
-        right: 5px
+        top: -10.35rem
+        right: .3125rem
+        z-index: 1
+
+        .roof-top
+            +halfCircle(.875rem)
+            background-color: #fff
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+            top: -.85rem
+
+            .cross
+                +size(.25rem,1.875rem)
+                background-color: #fff
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+                top: -1.875rem
+
+                &:before
+                    content: ' '
+                    display: block
+                    +size(1.875rem,.25rem)
+                    background-color: #fff
+                    position: absolute
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%,-50%)
+
+
 
 
 
