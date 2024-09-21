@@ -86,6 +86,9 @@ body
         letter-spacing: .125rem
         opacity: .5
 
+.changeTxtColor
+    color: #222
+
 /* txt-wrapper end */
 
 .building
@@ -93,6 +96,7 @@ body
     right: 0
     bottom: 0
     z-index: 1
+    transform: scale(.99)
 
 [class^="house"]
     position: absolute
@@ -146,6 +150,7 @@ body
     +size(20rem,18.75rem)
     +flex
     z-index: 0
+    background-color: #fafaf5
     .wall
         +flex($j: flex-start,$d: column)
         flex-grow: 1
@@ -163,7 +168,7 @@ body
             display: block
             +size(105%, 1rem)
             background-color: inherit
-            box-shadow: 0 0 8px $colorGreyDark
+            box-shadow: 0 0 8px #999
             position: absolute
             top: -1rem
             left: 50%
@@ -200,7 +205,7 @@ body
         +halfCircle(9.375rem)
         background: $roofGradient
         position: absolute
-        top: -10.35rem
+        top: -10.36rem
         right: .3125rem
         z-index: 1
 
@@ -210,7 +215,7 @@ body
             position: absolute
             left: 50%
             transform: translateX(-50%)
-            top: -.85rem
+            top: -.84rem
 
             .cross
                 +size(.25rem,1.875rem)
@@ -231,6 +236,28 @@ body
                     transform: translate(-50%,-50%)
 
 /* roof end */
+
+.sun,.moon
+  +size(50px,50px,50%)
+  +pos(250px,100px)
+
+.moon
+  +size(50px,50px,50%)
+  +pos(250px,100px)
+  box-shadow: inset 10px -10px rgba(#fff,0.9)
+  animation: moonAppear 5s both
+
+.sun
+    background-color: #ffdd38
+    box-shadow: 0px 0px 20px rgba(#ffdd38,0.5)
+    top: 400px
+    opacity: 0
+
+@keyframes moonAppear
+  0%
+    box-shadow: inset 0px 0px rgba(#fff,0.9)
+  100%
+    box-shadow: inset 10px -10px rgba(#fff,0.9)
 
 @keyframes falling
     0%
@@ -260,4 +287,18 @@ body
             +pos($posX,$posY)
             animation-delay: $i * -0.1s
 
-    
+.starFade
+    opacity: 0
+
+.moonFade
+    top: -100px
+    opacity: 0
+.sunRise
+    top: 100px
+    opacity: 1
+
+h1,.allStar
+    transition: 1s 
+
+.sun,.moon
+    transition: 2s ease-out

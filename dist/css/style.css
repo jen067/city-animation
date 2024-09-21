@@ -65,12 +65,17 @@ body {
   opacity: 0.5;
 }
 
+.changeTxtColor {
+  color: #222;
+}
+
 /* txt-wrapper end */
 .building {
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: 1;
+  transform: scale(0.99);
 }
 
 [class^=house] {
@@ -140,6 +145,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 0;
+  background-color: #fafaf5;
 }
 .house3 .wall {
   display: flex;
@@ -165,7 +171,7 @@ body {
   height: 1rem;
   border-radius: 0px;
   background-color: inherit;
-  box-shadow: 0 0 8px #bebdaf;
+  box-shadow: 0 0 8px #999;
   position: absolute;
   top: -1rem;
   left: 50%;
@@ -198,7 +204,7 @@ body {
   border-radius: 9.375rem 9.375rem 0 0;
   background: linear-gradient(150deg, #6fc5ff, #0058ff);
   position: absolute;
-  top: -10.35rem;
+  top: -10.36rem;
   right: 0.3125rem;
   z-index: 1;
 }
@@ -210,7 +216,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: -0.85rem;
+  top: -0.84rem;
 }
 .house3 .roof .roof-top .cross {
   width: 0.25rem;
@@ -236,6 +242,41 @@ body {
 }
 
 /* roof end */
+.sun, .moon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 250px;
+  top: 100px;
+}
+
+.moon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 250px;
+  top: 100px;
+  box-shadow: inset 10px -10px rgba(255, 255, 255, 0.9);
+  animation: moonAppear 5s both;
+}
+
+.sun {
+  background-color: #ffdd38;
+  box-shadow: 0px 0px 20px rgba(255, 221, 56, 0.5);
+  top: 400px;
+  opacity: 0;
+}
+
+@keyframes moonAppear {
+  0% {
+    box-shadow: inset 0px 0px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: inset 10px -10px rgba(255, 255, 255, 0.9);
+  }
+}
 @keyframes falling {
   0% {
     opacity: 0;
@@ -270,181 +311,203 @@ body {
 }
 .allStar .star1 {
   position: absolute;
-  left: 73.5440428554%;
-  top: -22.4942470116%;
+  left: 86.0901289551%;
+  top: -8.2545071106%;
   animation-delay: -0.1s;
 }
 .allStar .star2 {
   position: absolute;
-  left: 14.0499475809%;
-  top: -23.3229171281%;
+  left: 14.9976655772%;
+  top: 7.7559160407%;
   animation-delay: -0.2s;
 }
 .allStar .star3 {
   position: absolute;
-  left: 56.8249918672%;
-  top: 29.0502561852%;
+  left: 15.0390009205%;
+  top: -14.4129388724%;
   animation-delay: -0.3s;
 }
 .allStar .star4 {
   position: absolute;
-  left: 33.5330612603%;
-  top: -25.9767358305%;
+  left: 20.7599214276%;
+  top: -21.1832725026%;
   animation-delay: -0.4s;
 }
 .allStar .star5 {
   position: absolute;
-  left: 75.4196778863%;
-  top: -23.907806719%;
+  left: 54.6727378686%;
+  top: -16.2245847426%;
   animation-delay: -0.5s;
 }
 .allStar .star6 {
   position: absolute;
-  left: 6.3670810692%;
-  top: -0.3388942903%;
+  left: 50.3108507762%;
+  top: -7.3066262075%;
   animation-delay: -0.6s;
 }
 .allStar .star7 {
   position: absolute;
-  left: 88.0129571148%;
-  top: 38.2462290924%;
+  left: 68.9467366348%;
+  top: 46.4667741578%;
   animation-delay: -0.7s;
 }
 .allStar .star8 {
   position: absolute;
-  left: 89.8059822707%;
-  top: 21.2772364205%;
+  left: 97.6788354892%;
+  top: 16.0459523359%;
   animation-delay: -0.8s;
 }
 .allStar .star9 {
   position: absolute;
-  left: 13.30170044%;
-  top: 10.602332304%;
+  left: 98.9837804889%;
+  top: 14.8473259664%;
   animation-delay: -0.9s;
 }
 .allStar .star10 {
   position: absolute;
-  left: 88.9725473123%;
-  top: 20.8780471317%;
+  left: 58.9141371765%;
+  top: 21.9288172161%;
   animation-delay: -1s;
 }
 .allStar .star11 {
   position: absolute;
-  left: 50.0151148869%;
-  top: -27.6204422366%;
+  left: 69.5192636165%;
+  top: 33.1305401426%;
   animation-delay: -1.1s;
 }
 .allStar .star12 {
   position: absolute;
-  left: 36.9020979113%;
-  top: 23.1340708057%;
+  left: 20.1161368404%;
+  top: 48.2711382944%;
   animation-delay: -1.2s;
 }
 .allStar .star13 {
   position: absolute;
-  left: 96.45178098%;
-  top: 5.7148550442%;
+  left: 54.194007739%;
+  top: 16.6149656363%;
   animation-delay: -1.3s;
 }
 .allStar .star14 {
   position: absolute;
-  left: 34.2087856712%;
-  top: 41.7514616479%;
+  left: 50.4923934282%;
+  top: -25.4743351564%;
   animation-delay: -1.4s;
 }
 .allStar .star15 {
   position: absolute;
-  left: 60.2574213431%;
-  top: -16.3290248274%;
+  left: 64.0493768373%;
+  top: 2.709839618%;
   animation-delay: -1.5s;
 }
 .allStar .star16 {
   position: absolute;
-  left: 82.4434439256%;
-  top: 45.3724613139%;
+  left: 96.7794355263%;
+  top: 23.1843920745%;
   animation-delay: -1.6s;
 }
 .allStar .star17 {
   position: absolute;
-  left: 66.6404558816%;
-  top: 25.4963715606%;
+  left: 41.9693435352%;
+  top: 6.8224478555%;
   animation-delay: -1.7s;
 }
 .allStar .star18 {
   position: absolute;
-  left: 79.1532460555%;
-  top: 23.8481558057%;
+  left: 41.4377769325%;
+  top: -19.8124691366%;
   animation-delay: -1.8s;
 }
 .allStar .star19 {
   position: absolute;
-  left: 42.9894707879%;
-  top: 9.8901270886%;
+  left: 44.6624693984%;
+  top: 14.1023419102%;
   animation-delay: -1.9s;
 }
 .allStar .star20 {
   position: absolute;
-  left: 39.8417706131%;
-  top: 32.4391136472%;
+  left: 47.2035782393%;
+  top: -15.9093147232%;
   animation-delay: -2s;
 }
 .allStar .star21 {
   position: absolute;
-  left: 72.3313373947%;
-  top: 18.7431917135%;
+  left: 50.9736586675%;
+  top: -2.8050505658%;
   animation-delay: -2.1s;
 }
 .allStar .star22 {
   position: absolute;
-  left: 72.3778823563%;
-  top: -27.5246310529%;
+  left: 81.597827503%;
+  top: -4.1458582957%;
   animation-delay: -2.2s;
 }
 .allStar .star23 {
   position: absolute;
-  left: 39.5948172575%;
-  top: -12.353789519%;
+  left: 99.3943844771%;
+  top: -29.8297130663%;
   animation-delay: -2.3s;
 }
 .allStar .star24 {
   position: absolute;
-  left: 85.6379962274%;
-  top: -13.824495453%;
+  left: 86.4077459808%;
+  top: 28.2573766579%;
   animation-delay: -2.4s;
 }
 .allStar .star25 {
   position: absolute;
-  left: 11.2718685726%;
-  top: 21.2433435088%;
+  left: 62.7407842873%;
+  top: 49.8771160841%;
   animation-delay: -2.5s;
 }
 .allStar .star26 {
   position: absolute;
-  left: 17.4651378109%;
-  top: 5.3067715981%;
+  left: 32.879698893%;
+  top: -7.9211343112%;
   animation-delay: -2.6s;
 }
 .allStar .star27 {
   position: absolute;
-  left: 56.8469317591%;
-  top: -28.7552908217%;
+  left: 12.3605327395%;
+  top: 10.087736468%;
   animation-delay: -2.7s;
 }
 .allStar .star28 {
   position: absolute;
-  left: 87.1786199532%;
-  top: 5.2330447342%;
+  left: 20.5691058463%;
+  top: -10.2213718628%;
   animation-delay: -2.8s;
 }
 .allStar .star29 {
   position: absolute;
-  left: 36.8055540421%;
-  top: 20.5257138397%;
+  left: 23.3432947504%;
+  top: -11.3080715277%;
   animation-delay: -2.9s;
 }
 .allStar .star30 {
   position: absolute;
-  left: 99.1025171682%;
-  top: 36.2541457203%;
+  left: 67.9640083482%;
+  top: 30.3699954264%;
   animation-delay: -3s;
+}
+
+.starFade {
+  opacity: 0;
+}
+
+.moonFade {
+  top: -100px;
+  opacity: 0;
+}
+
+.sunRise {
+  top: 100px;
+  opacity: 1;
+}
+
+h1, .allStar {
+  transition: 1s;
+}
+
+.sun, .moon {
+  transition: 2s ease-out;
 }
